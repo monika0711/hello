@@ -1,21 +1,104 @@
-<!doctype html>
-
-<html lang="en">
+<!DOCTYPE html>
+<html lang="PL">
 <head>
-  <meta charset="utf-8">
+    <meta charset="UTF-8">
+    
+    <title>Kalkulator</title>
+    <link rel="stylesheet" type="text/css">
+    <script type="text/javascript" >
+    function show (x){
+calc.score.value += x;
+}
 
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+function showminus()
+{
+calc.score.value += "-";
+}
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+function showplus()
+{
+calc.score.value += "+";
+}
 
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
+function showstar()
+{
+calc.score.value += "*";
+}
+
+function showdivision()
+{
+calc.score.value += "/";
+}
+    </script>
+    <style>
+        .border {
+    border: 1px solid;
+    width: 245px;
+    height: 288px;
+    
+}
+#score {
+    width: 230px;
+    height: 35px;
+}
+
+#button {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+    font-style: bold;
+    cursor: pointer;
+}
+    </style>
 </head>
-
 <body>
-  <script src="js/scripts.js"></script>
+
+<div class="border">
+<form name="calc">  
+<table>
+    <tr>
+        <td>
+        <input id="score" name="display" type="text" readonly/>
+        </td> 
+    </tr>
+    <tr>
+        <td>
+            <input type="button" value="7" name="number7" id="button" onClick="show(7)"/>
+            <input type="button" value="8" name="number8" id="button" onClick="show(8)"/> 
+            <input type="button" value="9" name="number9" id="button" onClick="show(9)"/>
+            <input type="button" value="+" name="plus "id="button" onClick="showplus()" />
+        </td>
+        
+    </tr>
+    <tr>
+            <td>
+                <input type="button" value="4" name="number4" id="button" onClick="show(4)"/>
+                <input type="button" value="5" name="number5" id="button" onClick="show(5)"/>
+                <input type="button" value="6" name="number6" id="button" onClick="show(6)"/>
+                <input type="button" value="-" name="minus" id="button" onClick="showminus()"/>
+            </td>
+    </tr>
+    <tr>
+            <td>
+                <input type="button" value="1" name="number1" id="button" onClick="show(1)"/>
+                <input type="button" value="2" name="number2" id="button" onClick="show(2)"/>
+                <input type="button" value="3" name="number3" id="button" onClick="show(3)"/>
+                <input type="button" value="*" name="star" id="button" onClick="showstar()"/>
+            </td>
+    </tr>
+    <tr>
+        <td>
+                <input type="button" value="0" name="number0" id="button" onClick="show(0)"/>
+                <input type="reset" value="C" name="delete" id="button" />
+                <input type="button" value="=" name="equal" id="button" onClick="equal()"/>
+                <input type="button" value="/" name="division" id="button" onClick="showdivision()"/>
+        </td>
+    </tr>
+    
+ 
+</table>
+</form>  
+</div>
+    
 </body>
 </html>
